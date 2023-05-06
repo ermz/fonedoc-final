@@ -1,4 +1,11 @@
 import '@/styles/globals.css';
+import Navbar from "@/components/Navbar/Navbar"
+import { SelectedPage } from "@/types/types"
+
+type Props = {
+  selectPage: string;
+  setSelectedPage: (value: string) => void;
+}
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar/>
+        {children}
+      </body>
     </html>
   )
 }
